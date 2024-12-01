@@ -36,16 +36,13 @@ tasks:
         try:
           with open(file_path, 'rb') as f:
             current_hash = hashlib.sha256(f.read()).hexdigest()
-            # Check if the current hash is different from the previous hash
-            # (You might need to store the previous hash in a file or database)
           return current_hash != previous_hash
         except FileNotFoundError:
           return False
 
-      # Example usage:
       html_file_path = "login.html"
       previous_hash_file = "previous_hash.txt"
-      # Replace with the initial hash or retrieve from a database
+      # Replace with the initial hash from a database
 
       if check_for_html_changes(html_file_path, previous_hash_file):
         # Trigger Kestra workflow
