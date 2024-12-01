@@ -1,10 +1,18 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Pacifico', cursive;
     line-height: 1.6;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 a {
     text-decoration: none;
     color: #007bff;
@@ -25,14 +33,66 @@ a:hover {
 }
 
 .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
 }
 
 .menu a {
     margin: 0 15px;
     font-size: 1em;
     color: white;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover {
+    transform: scale(1.1);
+}
+
+.github-button {
+    background-color: #24292f;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+}
+
+.github-button:hover {
+    background-color: #333;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .line {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+}
+
+.hamburger.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
 }
 
 /* Subscribe Section */
@@ -43,7 +103,7 @@ a:hover {
 }
 
 .subscribe-section h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 10px;
 }
 
@@ -90,21 +150,33 @@ a:hover {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
 .grid-item {
-    background-color: #f4f4f9;
-    padding: 20px;
     text-align: center;
+    background-color: #f4f4f9;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
 
+.grid-item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 .grid-item:hover {
     transform: scale(1.05);
+}
+
+.grid-item p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
 }
 
 /* Footer */
@@ -112,7 +184,9 @@ a:hover {
     background-color: #2a3e69;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    margin-top: auto; /* Ensures footer is pushed to the bottom */
 }
 
 .footer a {
@@ -123,21 +197,27 @@ a:hover {
     color: #1da1f2;
 }
 
-/* Responsive Styles */
+/* Responsive Section */
 @media (max-width: 768px) {
-    .header {
-        flex-wrap: wrap;
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #2a3e69;
+        padding: 10px 0;
         text-align: center;
     }
 
-    .menu {
+    .menu.active {
         display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     .menu a {
         margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
     }
 
     .subscribe-form {
@@ -145,31 +225,11 @@ a:hover {
     }
 
     .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 15px;
-    }
-
-    .grid-item {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.2em;
-    }
-
-    .subscribe-form input, .subscribe-form button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .grid-item {
-        font-size: 0.9em;
-        padding: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
     .footer {
-        font-size: 0.9em;
+        padding: 10px;
+        font-size: 0.8em;
     }
 }

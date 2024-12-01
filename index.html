@@ -7,16 +7,24 @@
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
         <div class="logo">EduKestra</div>
-        <nav class="menu">
+        <nav class="menu" id="menu">
             <a href="#home">Home</a>
             <a href="#courses">Courses</a>
             <a href="#roadmaps">Roadmaps</a>
             <a href="#contact">Contact</a>
+            <a href="https://github.com/Hritikraj8804/EduKestra" class="github-button" target="_blank">GitHub</a>
         </nav>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
     </header>
 
+    <!-- Subscribe Section -->
     <section class="subscribe-section">
         <h1>Stay Updated with EduKestra</h1>
         <p>Subscribe to get the latest courses, tests, and roadmaps.</p>
@@ -27,23 +35,52 @@
         </form>
     </section>
 
+    <!-- Content Section -->
     <section class="content-section" id="courses">
         <h2>Explore Our Content</h2>
         <div class="grid-container">
-            <div class="grid-item">Courses</div>
-            <div class="grid-item">Test Papers</div>
-            <div class="grid-item">Roadmaps</div>
-            <div class="grid-item">Assignments</div>
-            <div class="grid-item">Projects</div>
-            <div class="grid-item">Webinars</div>
+            <div class="grid-item">
+                <img src="/styles/img/courses.jpeg" alt="Courses">
+                <p>Courses</p>
+            </div>
+            <div class="grid-item">
+                <img src="/styles/img/tests.jpeg" alt="Test Papers">
+                <p>Test Papers</p>
+            </div>
+            <div class="grid-item">
+                <img src="/styles/img/roadmap.jpg" alt="Roadmaps">
+                <p>Roadmaps</p>
+            </div>
+            <div class="grid-item">
+                <img src="/styles/img/Assignments.png" alt="Assignments">
+                <p>Assignments</p>
+            </div>
+            <div class="grid-item">
+                <img src="/styles/img/project.png" alt="Projects">
+                <p>Projects</p>
+            </div>
+            <div class="grid-item">
+                <img src="/styles/img/Webinars.png" alt="Webinars">
+                <p>Webinars</p>
+            </div>
         </div>
     </section>
 
+    <!-- Footer Section -->
     <footer class="footer" id="contact">
         <h3>Contact Us</h3>
         <p>Email: support@edukestra.com</p>
         <p>Telegram: <a href="https://t.me/edukestra" target="_blank">@EduKestra</a></p>
         <p>LinkedIn: <a href="https://linkedin.com/in/edukestra" target="_blank">EduKestra</a></p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const hamburger = document.getElementById('hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
