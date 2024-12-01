@@ -2,7 +2,7 @@
 
 ### Overview
 
-The **EduKestra** project is designed to provide a platform where students can is a fully automated platform for managing study content and student subscriptions. This project integrates **GitHub** and **Kestra** to automate the process of notifying students about newly added assignments, tests, and study materials, request new topics to be added to educational content. This page allows students to submit requests with the following information:
+The **EduKestra** project is designed to provide a platform where students can is a fully automated platform for managing study content and student subscriptions. This project integrates **GitHub** and **Kestra** to automate the process of notifying students about newly added assignments, tests, and study materials, request new topics to be added to educational content. Request page allows students to submit requests with the following information:
 - **Name**: The student's name.
 - **Email**: A valid email address.
 - **Requested Topic**: A description of the topic they'd like to see included.
@@ -27,7 +27,7 @@ This page also contains a user-friendly form for submitting requests, which ensu
     ![Edukestra](/styles/img/mobil_content.png)
 
 3. **Form for Requesting Topics**:
-   - The page includes a simple and clear form for submitting requests, making it easy for students to share their thoughts on new topics they'd like to be included in the curriculum.
+   - The page includes a simple and clear form for submitting requests, making it easy for  students to share their thoughts on new topics they'd like to be included in the curriculum.
    - The form includes input fields for the student’s name, email, and a text area for describing the requested topic.
    - A "Submit Request" button sends the form data when clicked.
    ![Edukestra](/styles/img/req.png)
