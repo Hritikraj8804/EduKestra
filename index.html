@@ -13,7 +13,7 @@
         <nav class="menu" id="menu">
             <a href="#home">Home</a>
             <a href="#courses">Courses</a>
-            <a href="#roadmaps">Roadmaps</a>
+            <a href="/request.html">Request</a>
             <a href="#contact">Contact</a>
             <a href="https://github.com/Hritikraj8804/EduKestra" class="github-button" target="_blank">GitHub</a>
         </nav>
@@ -31,7 +31,7 @@
         <form class="subscribe-form">
             <input type="email" placeholder="Enter your email" required>
             <input type="text" placeholder="Enter your Telegram ID" required>
-            <button type="submit">Subscribe</button>
+            <button type="submit" onclick="showNotification()">Subscribe</button>
         </form>
     </section>
 
@@ -74,12 +74,23 @@
         <p>LinkedIn: <a href="https://linkedin.com/in/edukestra" target="_blank">EduKestra</a></p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const hamburger = document.getElementById('hamburger');
             menu.classList.toggle('active');
             hamburger.classList.toggle('active');
+        }
+        function showNotification() {
+            // alert("You have successfully subscribed!");
+            Swal.fire({
+            title: 'Subscription Successful!',
+            text: 'Thank you for subscribing.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+            });
         }
     </script>
 </body>

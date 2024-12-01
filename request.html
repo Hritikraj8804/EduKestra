@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request New Topics - EduKestra</title>
+    <link rel="stylesheet" href="styles/req_styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">EduKestra</div>
+        <nav class="menu" id="menu">
+            <a href="/index.html">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="https://github.com/Hritikraj8804/EduKestra" class="github-button" target="_blank">GitHub</a>
+        </nav>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="request-section">
+            <h2>Request a New Topic</h2>
+            <p>If you have a topic you'd like us to add to our courses, please submit your request here!</p>
+            
+            <form class="request-form" action="/submit-request" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="topic">Requested Topic</label>
+                <textarea id="topic" name="topic" rows="4" placeholder="Describe the topic you'd like to request" required></textarea>
+
+                <button type="submit">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@edukestra.com</p>
+        <p>Telegram: <a href="https://t.me/edukestra" target="_blank">@EduKestra</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/edukestra" target="_blank">EduKestra</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const hamburger = document.getElementById('hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        // function notification() {
+        //     // alert("You have successfully submitted the Request!");
+        //     Swal.fire({
+        //     title: 'Submission Successful!',
+        //     text: 'Thank you for Submission.',
+        //     icon: 'success',
+        //     confirmButtonText: 'OK'
+        //     });
+        // }
+    </script>
+
+</body>
+</html>
