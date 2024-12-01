@@ -31,6 +31,7 @@ This page also contains a user-friendly form for submitting requests, which ensu
    - The form includes input fields for the student’s name, email, and a text area for describing the requested topic.
    - A "Submit Request" button sends the form data when clicked.
    ![Edukestra](/styles/img/req.png)
+   ![Edukestra](/styles/img/subscribed.png)
 
 4. **Footer with Contact Information**:
    - The footer includes contact details, allowing users to get in touch for support or inquiries.
