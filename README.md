@@ -37,6 +37,7 @@ Students can subscribe to the platform by providing their **Telegram ID** and **
 - **`previous_hash.txt`**: Contains the previous_hash values
 
 ### 3. Kestra Workflow
+![Kestra Workflow](styles/img/Kestra_workflow.png)
 Automates the following tasks:
 - Storing subscriber details.
 - Processing new content additions.
@@ -51,6 +52,7 @@ Triggers the Kestra workflow whenever:
 ## Prerequisites
 
 - **Kestra** installed and running.
+![Kestra](styles/img/Kestra.png)
 - **GitHub Repository** with:
   - `subscribers.txt` (for storing Telegram IDs).
 - **GitHub Actions** enabled.
@@ -86,3 +88,10 @@ Host the `index.html` and `style.css` files on any static website hosting servic
    git commit -m "Added new content"
    git push origin main
     ```
+
+## Contact
+
+For any queries, feel free to reach out:
+- **Linkedin**: [Hritik Raj](https://www.linkedin.com/in/hritik-raj-8804hr/)
+- **Email**: hritikraj8804@gmail.com
+- **Telegram**: [@hritik_rajj](https://t.me/hritik_rajj)
