@@ -1,0 +1,62 @@
+id: edu-kestra
+namespace: edukestra.team
+
+# Trigger the workflow when a new commit is pushed to the GitHub repository
+triggers:
+  - id: github_content_push
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: "@hourly"
+    disabled: false
+
+tasks:
+  # Read the list of subscribers from the GitHub repository
+  - id: read
+    type: io.kestra.plugin.googleworkspace.sheets.Read
+    spreadsheetId: "1ppAselas9s0f2a9kd5Jg6PnmCx6Ie9cZqylfB6plRag"
+    store: true
+    valueRender: FORMATTED_VALUE 
+
+  # Check for new content in the repository
+  - id: check_for_new_content
+    type: io.kestra.plugin.scripts.shell.Script
+    script: |
+      import hashlib
+      import time
+
+      def check_for_html_changes(file_path):
+        """Checks if a HTML file has been modified since the last check.
+
+        Args:
+          file_path: login.html
+
+        Returns:
+          True if the file has been modified, False otherwise.
+          """
+
+        try:
+          with open(file_path, 'rb') as f:
+            current_hash = hashlib.sha256(f.read()).hexdigest()
+            # Check if the current hash is different from the previous hash
+            # (You might need to store the previous hash in a file or database)
+          return current_hash != previous_hash
+        except FileNotFoundError:
+          return False
+
+      # Example usage:
+      html_file_path = "login.html"
+      previous_hash_file = "previous_hash.txt"
+      # Replace with the initial hash or retrieve from a database
+
+      if check_for_html_changes(html_file_path, previous_hash_file):
+        # Trigger Kestra workflow
+        print("HTML file has changed. Triggering Kestra workflow...")
+        # Update the previous hash for the next check
+        with open(previous_hash_file, 'w') as f:
+          f.write(current_hash)
+
+  # Send notifications to all subscribers
+  - id: send_notifications
+    type: io.kestra.plugin.notifications.telegram.TelegramExecution
+    token: "7913336534:AAEWMY28NozkZiOpDBtgN3Nnc2xkkn7RA3A"
+    channel: "{{ task('read').output }}"
+    payload: "New content is available on StudentHub! Check it out."
