@@ -1,6 +1,11 @@
-# EduKeastra
+# EduKestra
 
-EduKeastra is a fully automated platform for managing study content and student subscriptions. This project integrates **GitHub** and **Kestra** to automate the process of notifying students about newly added assignments, tests, and study materials.
+[Edukestra](/Edukestra/README.md) is a fully automated platform for managing study content and student subscriptions. This project integrates **GitHub** and **Kestra** to automate the process of notifying students about newly added assignments, tests, and study materials.
+### Edukestra (desktop view):
+![Edukestra](/styles/img/edukestra.png)
+
+### Edukestra (mobile view):
+![Edukestra](/styles/img/mobile_ham.png)
 
 ## Features
 - **Subscription Management**: Students can subscribe to the platform by providing their Telegram ID and email.
@@ -18,9 +23,15 @@ EduKeastra is a fully automated platform for managing study content and student 
 ├──kestra.yml                    # Kestra workflow
 ├── subscribers.txt              # Stores the Telegram IDs of subscribed students
 ├── previous_hash.txt            # Stores the previous_hash
-├── index.html                   # Frontend HTML for the subscription page and study material.
+├── index.html                   # Frontend HTML for the index page
+├── request.html                   # Frontend HTML for the request page
 ├── styles/
-│   └── styles.css               # Stylesheet for the subscription page
+│   └── styles.css               # Stylesheet for the index page
+│   └── req_styles.css           # Stylesheet for the request page
+│   └── img                      # images for the index page and request page
+│   │   └── img1.png
+│   │   └── img2.jpeg
+│   │   └── img3.jpg
 ├── README.md                    # Project documentation
 
 ```
@@ -30,7 +41,9 @@ EduKeastra is a fully automated platform for managing study content and student 
 ### 1. Frontend for Subscription
 Students can subscribe to the platform by providing their **Telegram ID** and **email** via the simple **HTML/CSS page**:
 - **`index.html`**: Contains the form for subscription and content of the study.
-- **`style.css`**: Provides styling for the page.
+- **`style.css`**: Provides styling for the index page.
+- **`request.html`**: Contains the form for request of content of the study.
+- **`req_style.css`**: Provides styling for request the page.
 
 ### 2. GitHub for Data Storage
 - **`subscribers.txt`**: Stores the Telegram IDs of all subscribed students.
@@ -69,7 +82,7 @@ cd EduKestra
 ```
 ## 2. Host the Frontend
 
-Host the `index.html` and `style.css` files on any static website hosting service, such as **GitHub Pages** or **Netlify**.
+Host the `index.html`, `request.html`, `style.css` and `req_style.css` files on any static website hosting service, such as **GitHub Pages** or **Netlify**.
 
 ---
 
